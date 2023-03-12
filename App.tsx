@@ -5,14 +5,14 @@ import { useState } from 'react'
 import AddList from './components/AddList';
 
 export default function App() {
-  let [modalON, setModalOn] = useState<boolean>(false)
+  let [modalON, setModalOn] = useState<boolean>(true)
 
   let modalHandle = () => {
     setModalOn(true)
   }
   return (
     <View style={styles.container}>
-      {modalON && <AddList showmodal={modalON} />}
+      {modalON && <AddList showmodal={modalON} setModal={setModalOn} />}
       <Button title='Add List ' onPress={modalHandle} />
       <ScrollView style={styles.button}>
         {[1, 23, 2, 12, 12, 12, 1, 21, 2, 12, 1, 2, 12].map(val => <Listitem />)}
