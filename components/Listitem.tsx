@@ -1,10 +1,11 @@
 import { View, Text, StyleSheet } from 'react-native'
 import React from 'react'
+import TodoItems from '../models/todo';
 
-const Listitem = () => {
+const Listitem: React.FC<TodoItems> = (prop) => {
     return (
         <View style={styles.Listitem}>
-            <Text style={styles.item}>Listitem</Text>
+            <Text style={styles.item}>{prop.id} {prop.title}</Text>
         </View>
     )
 }
